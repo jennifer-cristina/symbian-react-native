@@ -30,16 +30,16 @@ const style = StyleSheet.create({
     },
     soonIcon: {
         width: '40%',
-        height: '65%'
+        height: '75%'
     },
     container: {
         flex: 1,
     },
     formContainer: {
-        flex: 7,
+        flex: 8,
         margin: 10,
         backgroundColor: 'rgba(245, 213, 213, 0.33)',
-        ...bottomShadow
+        ...bottomShadow,
         // backgroundColor: COLORS.white
     },
     textForm: {
@@ -49,7 +49,8 @@ const style = StyleSheet.create({
     },
     patientFormContainer: {
         flex: 4,
-        marginTop: 30,
+        marginTop: 20,
+        // backgroundColor: COLORS.darkBlue
     },
     responsibleFormContainer: {
         flex: 2,

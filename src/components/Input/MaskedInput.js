@@ -3,33 +3,39 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import { FONTS, COLORS } from "../../assets/const";
+import { TextInputMask } from 'react-native-masked-text';
 
-export const Input = ({
+export const MaskedInput = ({
     iconName,
     placeholder,
     onChangeText,
     onBlur,
     value,
     hasError,
-    errorMessage }) => {
+    errorMessage,
+    type,
+    options
+}) => {
 
     return (
-        <View style={style.inputContainer}>
+        <View style={styles.inputContainer}>
 
             <View>
                 <FontAwesome
                     name={hasError ? "times-circle" : iconName}
-                    style={hasError ? style.errorIcon : style.icon}
+                    style={hasError ? styles.errorIcon : styles.icon}
                 />
-                <TextInput
-                    style={hasError ? style.errorInput : style.input}
+                <TextInputMask
+                    type={type}
+                    options={options}
+                    style={hasError ? styles.errorInput : styles.input}
                     placeholder={placeholder}
                     onChangeText={onChangeText}
                     onBlur={onBlur}
                     value={value}
                 />
                 {hasError && (
-                    <Text style={style.errorText}>
+                    <Text style={styles.errorText}>
                         {errorMessage}
                     </Text>
                 )}
@@ -39,20 +45,20 @@ export const Input = ({
     );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     inputContainer: {
         width: '95%',
         height: 85,
         position: 'relative',
         padding: 5,
         marginLeft: 10,
-        // backgroundColor: COLORS.beige,
+        // backgroundColor: COLORS.blue
     },
     icon: {
         position: 'absolute',
         top: 15,
-        right: 18,
-        fontSize: 20,
+        right: 20,
+        fontSize: 22,
         color: COLORS.black,
         marginRight: 10,
         zIndex: 2
@@ -71,7 +77,6 @@ const style = StyleSheet.create({
         borderColor: COLORS.white,
         borderBottomColor: COLORS.red,
         backgroundColor: COLORS.white,
-        color: COLORS.black,
         padding: 10,
         fontSize: 17,
     },

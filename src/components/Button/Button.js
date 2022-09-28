@@ -28,13 +28,14 @@ const style = StyleSheet.create({
     button: {
         width: '40%',
         height: '55%',
-        paddingVertical: 10,
+        paddingVertical: 15,
         paddingHorizontal: 25,
         borderWidth: 1,
         borderColor: COLORS.black,
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
+        // margin: 40,
         backgroundColor: COLORS.marsala,
         ...bottomShadow
     },
