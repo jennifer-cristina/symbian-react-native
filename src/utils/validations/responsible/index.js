@@ -15,7 +15,8 @@ export const patientRegisterDataSchema = yup.object().shape({
         .string()
         .min(14, 'Insira um número válido')
         .max(15, 'Insira um número válido')
-        .required('Insira um celular '),
+        .required('Insira um celular ')
+        .notOneOf([yup.ref('phone'), null], 'Insira um número diferente de telefone'),
     email: yup
         .string()
         .email('Insira um email válido')

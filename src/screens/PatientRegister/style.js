@@ -1,6 +1,5 @@
 import { StatusBar, StyleSheet } from "react-native";
 
-import { COLORS, FONTS } from "../../assets/const";
 
 const bottomShadow = {
     shadowOffset: { width: 0, height: 0, },
@@ -22,16 +21,6 @@ const style = StyleSheet.create({
         flex: 1,
         alignSelf: 'stretch',
     },
-    soonContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        // backgroundColor: COLORS.blue,
-    },
-    soonIcon: {
-        width: '40%',
-        height: '75%'
-    },
     container: {
         flex: 1,
     },
@@ -40,37 +29,23 @@ const style = StyleSheet.create({
         margin: 10,
         backgroundColor: 'rgba(245, 213, 213, 0.33)',
         ...bottomShadow,
-        // backgroundColor: COLORS.white
-    },
-    textForm: {
-        fontSize: 25,
-        fontFamily: FONTS.outfit,
-        marginLeft: 20,
+    }, 
+    formsContainer: {
+        flex: 8,
     },
     patientFormContainer: {
-        flex: 4,
+        height: 370,
         marginTop: 20,
-        // backgroundColor: COLORS.darkBlue
     },
     responsibleFormContainer: {
-        flex: 2,
         paddingTop: 10,
-        // backgroundColor: COLORS.darkBlue,
-    },
-    titleContainer: {
-        flexDirection: 'row'
-    },
-    textSecondForm: {
-        fontSize: 15,
-        fontFamily: FONTS.outfit,
-        marginTop: 10,
-        marginLeft: 5,
+        height: 180,
     },
     buttonContainer: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: COLORS.pink
+        height: 90,
     }
 });
 

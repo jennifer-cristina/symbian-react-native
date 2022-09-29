@@ -35,7 +35,6 @@ const style = StyleSheet.create({
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        // margin: 40,
         backgroundColor: COLORS.marsala,
         ...bottomShadow
     },

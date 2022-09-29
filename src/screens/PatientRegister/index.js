@@ -1,16 +1,15 @@
-import React from "react";
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
 import { Formik } from "formik";
+import { ImageBackground, KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
 
-import style from "./style";
-import { Input } from "../../components/Input/Input";
 import { ButtonRegister } from "../../components/Button/Button";
-import { patientRegisterDataSchema } from "../../utils/validations/responsible";
+import { Input } from "../../components/Input/Input";
 import { MaskedInput } from "../../components/Input/MaskedInput";
+import { Soon } from "../../components/Soon/Soon";
+import { Title } from "../../components/Title/Title";
+import { patientRegisterDataSchema } from "../../utils/validations/responsible";
+import style from "./style";
 
 import background from "../../assets/images/background.png";
-import soon from "../../assets/icons/soon.png";
 
 export const PatientRegister = () => {
 
@@ -35,12 +34,7 @@ export const PatientRegister = () => {
             >
                 <View style={style.container}>
 
-                    <View style={style.soonContainer}>
-                        <Image
-                            source={soon}
-                            style={style.soonIcon}
-                        />
-                    </View>
+                    <Soon />
 
                     <Formik
                         validationSchema={patientRegisterDataSchema}
@@ -51,7 +45,6 @@ export const PatientRegister = () => {
                         {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
                             <>
 
-                                {/* <View style={style.formContainer}> */}
                                 <KeyboardAvoidingView
                                     behavior={Platform.OS == "ios" ? "padding" : "height"}
                                     style={style.formContainer}
@@ -61,7 +54,9 @@ export const PatientRegister = () => {
 
                                         <View style={style.patientFormContainer}>
 
-                                            <Text style={style.textForm}>Cadastro de paciente</Text>
+                                            <Title
+                                                title="Cadastro de paciente"
+                                            />
 
                                             <Input
                                                 iconName="user"
@@ -117,14 +112,10 @@ export const PatientRegister = () => {
 
                                         <View style={style.responsibleFormContainer}>
 
-                                            <View style={style.titleContainer}>
-
-                                                <Text style={style.textForm}>Cadastro de responsável</Text>
-
-                                                <Text style={style.textSecondForm}>(Opcional)</Text>
-
-                                            </View>
-
+                                            <Title
+                                                title="Cadastro de responsável"
+                                                label="(Opcional)"
+                                            />
 
                                             <Input
                                                 iconName="user"
@@ -161,9 +152,9 @@ export const PatientRegister = () => {
                                             />
 
                                         </View>
+
                                     </ScrollView>
                                 </KeyboardAvoidingView>
-                                {/* </View> */}
                             </>
                         )}
                     </Formik>

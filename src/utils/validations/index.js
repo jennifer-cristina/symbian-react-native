@@ -1,1 +1,1 @@
-export * from "./responsible"
+export * from "./responsible";

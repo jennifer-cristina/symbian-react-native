@@ -8,7 +8,6 @@ export default function App() {
 
   const [fontsLoaded] = useFonts({
     Outfit_400Regular
-
   });
 
   if (!fontsLoaded) {

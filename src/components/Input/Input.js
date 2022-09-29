@@ -46,7 +46,6 @@ const style = StyleSheet.create({
         position: 'relative',
         padding: 5,
         marginLeft: 10,
-        // backgroundColor: COLORS.beige,
     },
     icon: {
         position: 'absolute',

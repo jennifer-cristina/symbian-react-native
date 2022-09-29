@@ -1,9 +1,8 @@
-import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { StyleSheet, Text, View } from "react-native";
 
-import { FONTS, COLORS } from "../../assets/const";
 import { TextInputMask } from 'react-native-masked-text';
+import { COLORS, FONTS } from "../../assets/const";
 
 export const MaskedInput = ({
     iconName,
@@ -52,7 +51,6 @@ const styles = StyleSheet.create({
         position: 'relative',
         padding: 5,
         marginLeft: 10,
-        // backgroundColor: COLORS.blue
     },
     icon: {
         position: 'absolute',
