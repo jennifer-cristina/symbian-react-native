@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { ImageBackground, KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
+import { ImageBackground, KeyboardAvoidingView, Platform, ScrollView, ToastAndroid, View } from "react-native";
 
 import { ButtonRegister } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
@@ -7,19 +7,35 @@ import { MaskedInput } from "../../components/Input/MaskedInput";
 import { Soon } from "../../components/Soon/Soon";
 import { Title } from "../../components/Title/Title";
 import { patientRegisterDataSchema } from "../../utils/validations/responsible";
+import Toast, { SuccessToast } from "react-native-toast-message";
 import style from "./style";
 
 import background from "../../assets/images/background.png";
+import { patientRegisterService } from "../../services/patient";
 
 export const PatientRegister = () => {
+
+    const handleForm = async (data) => {
+
+        const result = await patientRegisterService(data)
+
+        if (result.success) 
+            console.log('foooii')
+            return Toast.show({
+                type: 'success',
+                text1: 'Sucesso',
+                text2: 'Paciente cadastrado com sucesso 👋'
+            })
+
+    }
 
     const initialValues = {
         name: '',
         phone: '',
         mobile: '',
         email: '',
-        nameResponsible: '',
-        phoneResponsible: '',
+        name_responsible: '',
+        phone_responsible: '',
     }
 
     return (
@@ -120,22 +136,22 @@ export const PatientRegister = () => {
                                             <Input
                                                 iconName="user"
                                                 placeholder="nome do responsável"
-                                                onChangeText={handleChange('nameResponsible')}
-                                                onBlur={handleBlur('nameResponsible')}
-                                                value={values.nameResponsible}
-                                                hasError={!!errors.nameResponsible}
-                                                errorMessage={errors.nameResponsible}
+                                                onChangeText={handleChange('name_responsible')}
+                                                onBlur={handleBlur('name_responsible')}
+                                                value={values.name_responsible}
+                                                hasError={!!errors.name_responsible}
+                                                errorMessage={errors.name_responsible}
                                             />
 
 
                                             <MaskedInput
                                                 iconName="phone"
                                                 placeholder="telefone do responsável"
-                                                onChangeText={handleChange('phoneResponsible')}
-                                                onBlur={handleBlur('phoneResponsible')}
-                                                value={values.phoneResponsible}
-                                                hasError={!!errors.phoneResponsible}
-                                                errorMessage={errors.phoneResponsible}
+                                                onChangeText={handleChange('phone_responsible')}
+                                                onBlur={handleBlur('phone_responsible')}
+                                                value={values.phone_responsible}
+                                                hasError={!!errors.phone_responsible}
+                                                errorMessage={errors.phone_responsible}
                                                 type={'cel-phone'}
                                                 options={{
                                                     maskType: 'BRL',

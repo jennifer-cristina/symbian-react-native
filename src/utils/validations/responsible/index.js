@@ -21,11 +21,11 @@ export const patientRegisterDataSchema = yup.object().shape({
         .string()
         .email('Insira um email válido')
         .required('Insira um email'),
-    nameResponsible: yup
+    name_responsible: yup
         .string()
         .min(4, 'No mínimo 4 caracteres')
         .max(20, 'No máximo 20 caracteres'),
-    phoneResponsible: yup
+    phone_responsible: yup
         .string()
         .min(14, 'Insira um número válido')
         .max(15, 'Insira um número válido'),

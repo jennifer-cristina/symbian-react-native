@@ -1,5 +1,6 @@
 import { Text } from 'react-native';
 import { Outfit_400Regular } from '@expo-google-fonts/outfit';
+import Toast from "react-native-toast-message";
 
 import { PatientRegister } from './src/screens/PatientRegister';
 import { useFonts } from 'expo-font';
@@ -16,6 +17,7 @@ export default function App() {
     return (
       <>
         <PatientRegister />
+        <Toast/>
       </>
     );
   }
