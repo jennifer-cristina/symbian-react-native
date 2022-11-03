@@ -1,31 +1,32 @@
 import { Formik } from "formik";
-import { ImageBackground, KeyboardAvoidingView, Platform, ScrollView, ToastAndroid, View } from "react-native";
+import { ImageBackground, KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
 
-import { ButtonRegister } from "../../components/Button/Button";
+import Toast from "react-native-toast-message";
+import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
 import { MaskedInput } from "../../components/Input/MaskedInput";
 import { Soon } from "../../components/Soon/Soon";
 import { Title } from "../../components/Title/Title";
 import { patientRegisterDataSchema } from "../../utils/validations/responsible";
-import Toast, { SuccessToast } from "react-native-toast-message";
 import style from "./style";
 
 import background from "../../assets/images/background.png";
+import { BackButton } from "../../components/Button/BackButton";
 import { patientRegisterService } from "../../services/patient";
 
-export const PatientRegister = () => {
+export const PatientRegister = ({ navigation }) => {
 
     const handleForm = async (data) => {
 
         const result = await patientRegisterService(data)
 
-        if (result.success) 
+        if (result.success)
             console.log('foooii')
-            return Toast.show({
-                type: 'success',
-                text1: 'Sucesso',
-                text2: 'Paciente cadastrado com sucesso 👋'
-            })
+        return Toast.show({
+            type: 'success',
+            text1: 'Sucesso',
+            text2: 'Paciente cadastrado com sucesso 👋'
+        })
 
     }
 
@@ -50,7 +51,12 @@ export const PatientRegister = () => {
             >
                 <View style={style.container}>
 
-                    <Soon />
+                    <View style={style.headerContainer}>
+
+                        <BackButton navigation={navigation} />
+                        <Soon width={140} height={60} />
+
+                    </View>
 
                     <Formik
                         validationSchema={patientRegisterDataSchema}
@@ -162,8 +168,8 @@ export const PatientRegister = () => {
 
                                         <View style={style.buttonContainer}>
 
-                                            <ButtonRegister
-                                                label="CADASTRAR"
+                                            <Button
+                                                label="CADASTRAR PACIENTES"
                                                 onPress={handleSubmit}
                                             />
 

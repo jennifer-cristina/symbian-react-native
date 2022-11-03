@@ -2,13 +2,13 @@ import { Image, StyleSheet, View } from "react-native";
 
 import soon from "../../assets/icons/soon.png";
 
-export const Soon = ({ }) => {
+export const Soon = ({ width, height }) => {
 
     return (
         <View style={style.soonContainer}>
             <Image
                 source={soon}
-                style={style.soonIcon}
+                style={{width, height}}
             />
         </View>
     )
@@ -19,9 +19,5 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    soonIcon: {
-        width: '35%',
-        height: '70%'
     },
 })

@@ -21,38 +21,20 @@ const style = StyleSheet.create({
     background: {
         flex: 1,
         alignSelf: 'stretch',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     container: {
-        flex: 1,
+        width: 380,
+        height: 350,
+        backgroundColor: COLORS.whiteLight,
+        borderRadius: 5,
     },
-    formContainer: {
-        flex: 8,
-        margin: 10,
-        backgroundColor: 'rgba(245, 213, 213, 0.33)',
-        ...bottomShadow,
-    }, 
-    formsContainer: {
-        flex: 8,
-    },
-    patientFormContainer: {
-        height: 370,
-        marginTop: 20,
-    },
-    responsibleFormContainer: {
-        paddingTop: 10,
-        height: 180,
-    },
-    buttonContainer: {
+    buttonsContainer: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        height: 90,
-    },
-    headerContainer:{
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
+        paddingBottom: 30,
     },
 });
 

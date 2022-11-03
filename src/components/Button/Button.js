@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { COLORS } from "../../assets/const";
 
 
-export const ButtonRegister = ({ label, onPress }) => {
+export const Button = ({ label, onPress }) => {
 
     return (
         <TouchableOpacity
@@ -26,8 +26,8 @@ const bottomShadow = {
 
 const style = StyleSheet.create({
     button: {
-        width: '40%',
-        height: '55%',
+        width: 250,
+        height: 50,
         paddingVertical: 15,
         paddingHorizontal: 25,
         borderWidth: 1,

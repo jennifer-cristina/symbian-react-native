@@ -34,3 +34,32 @@ export const patientRegisterService = async (data) => {
     }
 
 }
+
+export const getPatientsService = async () => {
+    try {
+
+        const result = await api.get(`/listarPacientes`)
+
+        const success = result.status === 200
+
+        const formattedData = result.data.map(item => {
+            return {
+                id: item.id,
+                name: item.nome,
+                phone: item.telefone
+            }
+        })
+
+        return {
+            success,
+            data: formattedData
+        }
+
+    } catch (error) {
+        showErrorToast(error.response.data.message)
+        return {
+            success: false,
+            data: error.response.data
+        }
+    }
+}

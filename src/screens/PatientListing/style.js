@@ -1,14 +1,6 @@
 import { StatusBar, StyleSheet } from "react-native";
 import { COLORS } from "../../assets/const";
 
-
-const bottomShadow = {
-    shadowOffset: { width: 0, height: 0, },
-    shadowColor: 'black',
-    shadowOpacity: 2,
-    elevation: 5,
-}
-
 const style = StyleSheet.create({
     mainContainer: {
         display: 'flex',
@@ -25,35 +17,29 @@ const style = StyleSheet.create({
     container: {
         flex: 1,
     },
-    formContainer: {
-        flex: 8,
-        margin: 10,
-        backgroundColor: 'rgba(245, 213, 213, 0.33)',
-        ...bottomShadow,
-    }, 
-    formsContainer: {
-        flex: 8,
-    },
-    patientFormContainer: {
-        height: 370,
-        marginTop: 20,
-    },
-    responsibleFormContainer: {
-        paddingTop: 10,
-        height: 180,
-    },
-    buttonContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 90,
-    },
-    headerContainer:{
+    headerContainer: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    listContainer: {
+        flex: 5,
+        backgroundColor: COLORS.whiteLight,
+        margin: 20,
+        paddingTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    patientsContainer: {
+        flex: 1,
+        marginTop: 20,
+        margin: 10,
+        alignSelf: 'stretch',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    
 });
 
 export default style;

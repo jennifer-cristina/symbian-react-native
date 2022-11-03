@@ -16,10 +16,12 @@ export const Title = ({ title, label }) => {
 
 const style = StyleSheet.create({
     titleContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
     },
     textForm: {
-        fontSize: 25,
+        fontSize: 20,
         fontFamily: FONTS.outfit,
         marginLeft: 20,
     },

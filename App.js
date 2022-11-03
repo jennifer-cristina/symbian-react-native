@@ -4,6 +4,8 @@ import Toast from "react-native-toast-message";
 
 import { PatientRegister } from './src/screens/PatientRegister';
 import { useFonts } from 'expo-font';
+import { Home } from './src/screens/Home';
+import Navigation from './src/navigation/navigation';
 
 export default function App() {
 
@@ -16,7 +18,7 @@ export default function App() {
   } else {
     return (
       <>
-        <PatientRegister />
+        <Navigation />
         <Toast/>
       </>
     );
